@@ -11,13 +11,13 @@ app.use(express.json());
 // Mock database
 const mockDatabase = [
   { id: 1, name: "Alice Johnson", email: "alice@example.com" },
-  { id: 2, name: "Vith Smith", email: "bob@example.com" },
+  { id: 2, name: "Vith Smith", email: "vith@example.com" },
   { id: 3, name: "Carol Williams", email: "carol@example.com" },
 ];
 
 // Transform user data: split name into first and last name
 export const transformUserData = (user: (typeof mockDatabase)[0]) => {
-  const [firstName, lastName] = user.name.split("-");
+  const [firstName, lastName] = user.name.split(" ");
   return {
     id: user.id,
     first_name: firstName,
